@@ -16,8 +16,8 @@ export const siteConfig = {
   /** SEO用の説明文 */
   description:
     "情報系の学生エンジニア Hikaru のポートフォリオ。IoT（LoRaWAN / SCHC）と AI（マルチエージェント）を中心に、制作物・ブログをまとめています。",
-  /** 公開URL（OGPやsitemapに使用）★要確認: Vercelデプロイ後のドメインへ */
-  url: "https://hikarucode.vercel.app",
+  /** 公開URL（OGPやsitemapに使用） */
+  url: "https://hikarucode1.vercel.app",
   /** 拠点 */
   location: "Japan",
 
