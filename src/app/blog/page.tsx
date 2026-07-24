@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import { Container } from "@/components/container";
 import { Reveal } from "@/components/reveal";
-import { getZennArticles, getZennBooks } from "@/lib/zenn";
+import { formatZennDate, getZennArticles, getZennBooks } from "@/lib/zenn";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -12,11 +12,6 @@ export const metadata: Metadata = {
 
 // Zenn API を1時間ごとに再取得（lib/zenn.ts の revalidate に追従）
 export const revalidate = 3600;
-
-function formatZennDate(iso: string): string {
-  // published_at は "2026-05-21T..." 形式。先頭の日付部分だけ使う（TZ非依存）
-  return iso.slice(0, 10).replace(/-/g, ".");
-}
 
 export default async function BlogPage() {
   const [articles, books] = await Promise.all([
