@@ -14,11 +14,11 @@ export type SkillGroup = {
   items: string[];
 };
 
-/** スキル一覧。GitHubの使用言語・プロジェクトから反映。必要に応じて調整してください。 */
+/** スキル一覧。いま手を動かして書いているものに絞っています。 */
 export const skills: SkillGroup[] = [
   {
     category: "Languages",
-    items: ["TypeScript", "Swift", "Python", "Dart", "C / C++"],
+    items: ["TypeScript", "Swift", "Python"],
   },
   {
     category: "Frontend",
