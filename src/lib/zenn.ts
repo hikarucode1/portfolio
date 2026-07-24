@@ -4,6 +4,14 @@ import { siteConfig } from "@/config/site";
 const ZENN_USERNAME =
   siteConfig.links.zenn.split("/").filter(Boolean).pop() ?? "";
 
+/**
+ * published_at（"2026-05-21T..." 形式）を "2026.05.21" に整形する。
+ * 先頭の日付部分だけを使うのでタイムゾーンに依存しない。
+ */
+export function formatZennDate(iso: string): string {
+  return iso.slice(0, 10).replace(/-/g, ".");
+}
+
 export type ZennArticle = {
   id: number;
   title: string;

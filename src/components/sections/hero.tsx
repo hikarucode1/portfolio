@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { SocialLinks } from "@/components/social-links";
 import { siteConfig } from "@/config/site";
+import { nowItems } from "@/data/profile";
 
 export function Hero() {
   return (
@@ -33,7 +34,21 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="mt-12">
+        {nowItems.length > 0 && (
+          <div className="mt-12 max-w-xl rounded-xl border border-border bg-surface/60 p-5">
+            <p className="mb-3 font-mono text-xs text-accent">{"// Now"}</p>
+            <ul className="space-y-2">
+              {nowItems.map((item) => (
+                <li key={item} className="flex gap-2.5 text-sm text-muted">
+                  <span className="mt-[7px] size-1 shrink-0 rounded-full bg-accent" />
+                  <span className="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="mt-10">
           <SocialLinks className="-ml-2" />
         </div>
       </Container>

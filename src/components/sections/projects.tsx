@@ -3,6 +3,7 @@ import { Section } from "@/components/section";
 import { Reveal } from "@/components/reveal";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 const research = projects.filter((p) => p.category === "research");
 const personal = projects.filter((p) => p.category === "personal");
@@ -16,15 +17,44 @@ function GroupHeading({ ja, en }: { ja: string; en: string }) {
   );
 }
 
-function ProjectGrid({ items }: { items: Project[] }) {
+/**
+ * featured は詳しく（1件のときは横幅いっぱい）、それ以外は密なグリッドで簡潔に。
+ */
+function ProjectGroup({ items }: { items: Project[] }) {
+  const featured = items.filter((p) => p.featured);
+  const rest = items.filter((p) => !p.featured);
+
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
-      {items.map((project, i) => (
-        <Reveal key={project.slug} delay={i * 80} className="h-full">
-          <ProjectCard project={project} />
-        </Reveal>
-      ))}
-    </div>
+    <>
+      {featured.length > 0 && (
+        <div className="grid gap-6 sm:grid-cols-2">
+          {featured.map((project, i) => (
+            <Reveal
+              key={project.slug}
+              delay={i * 80}
+              className={cn("h-full", featured.length === 1 && "sm:col-span-2")}
+            >
+              <ProjectCard project={project} variant="featured" />
+            </Reveal>
+          ))}
+        </div>
+      )}
+
+      {rest.length > 0 && (
+        <div
+          className={cn(
+            "grid gap-6 sm:grid-cols-2 lg:grid-cols-3",
+            featured.length > 0 && "mt-6"
+          )}
+        >
+          {rest.map((project, i) => (
+            <Reveal key={project.slug} delay={i * 80} className="h-full">
+              <ProjectCard project={project} variant="compact" />
+            </Reveal>
+          ))}
+        </div>
+      )}
+    </>
   );
 }
 
@@ -40,13 +70,13 @@ export function Projects() {
       {research.length > 0 && (
         <div className="mb-14">
           <GroupHeading ja="研究" en="Research" />
-          <ProjectGrid items={research} />
+          <ProjectGroup items={research} />
         </div>
       )}
       {personal.length > 0 && (
         <div>
           <GroupHeading ja="個人開発" en="Personal" />
-          <ProjectGrid items={personal} />
+          <ProjectGroup items={personal} />
         </div>
       )}
     </Section>
