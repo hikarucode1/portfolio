@@ -40,10 +40,6 @@ export default async function CardPage() {
         <p className="mt-1.5 font-mono text-sm text-muted">
           @{siteConfig.handle}
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-muted">
-          {siteConfig.tagline}
-        </p>
-
         <a href="/api/vcard" download className="btn-primary mt-8 w-full">
           <Download className="size-4" />
           連絡先を保存

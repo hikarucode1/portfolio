@@ -9,8 +9,6 @@ export const siteConfig = {
   handle: "hikarucode1",
   /** 肩書き */
   role: "Student Engineer",
-  /** トップに出す一言キャッチ */
-  tagline: "IoTとAIの境界で、軽くて賢いシステムをつくる学生エンジニア。",
   /** SEO用の説明文 */
   description:
     "情報系の学生エンジニア Hikaru のポートフォリオ。IoT（LoRaWAN / SCHC）と AI（マルチエージェント）を中心に、制作物・ブログをまとめています。",

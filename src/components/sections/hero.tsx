@@ -21,10 +21,6 @@ export function Hero() {
           {siteConfig.name}
         </h1>
 
-        <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-muted sm:text-xl">
-          {siteConfig.tagline}
-        </p>
-
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link href="/#projects" className="btn-primary">
             制作物を見る
