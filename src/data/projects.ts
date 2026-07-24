@@ -97,7 +97,7 @@ export const projects: Project[] = [
     title: "トリアージュ",
     tagline: "3賢者AIが肌を診断し、ケアの優先順位を導く",
     description:
-      "カメラに映った顔をAIが解析し、西洋・内科・東洋それぞれの視点を持つ3人の専門家エージェントが議論。統合エージェントが優先度付きのアクションプランにまとめます。Zenn Fes Spring 2026 / YouCam APIコンテストの受賞作品です。",
+      "カメラに映った顔をAIが解析し、西洋・内科・東洋それぞれの視点を持つ3人の専門家エージェントが議論。統合エージェントが優先度付きのアクションプランにまとめます。Zenn Fes Spring 2026（YouCam APIコンテスト）でビューティテック賞をいただきました。",
     period: "2026",
     status: "done",
     category: "personal",
@@ -108,8 +108,7 @@ export const projects: Project[] = [
       "YouCam API",
       "AWS S3",
     ],
-    // ★ 賞名が確定したら「Zenn Fes Spring 2026 最優秀賞」のように具体名へ更新してください
-    awards: ["Zenn Fes Spring 2026 受賞"],
+    awards: ["Zenn Fes Spring 2026 ビューティテック賞"],
     highlights: [
       "Dr. Western / Dr. Internal / Master Toyo の3エージェントが異なる視点で議論",
       "YouCam Skin Analysis HD で肌を解析し、SSEでリアルタイムな会議UIを実現",
