@@ -49,7 +49,7 @@ export const skills: SkillGroup[] = [
 
 /** Hero に出す「いま取り組んでいること」（3件程度まで） */
 export const nowItems: string[] = [
-  "卒業研究 — SCHC 実装の実機評価と中間発表の準備",
-  "サブミル — App Store リリースに向けた配信準備",
-  "shift-manager — 塾での運用に向けた機能追加",
+  "卒業研究 — 中間発表を終え、卒業論文に向けた比較測定と執筆",
+  "自宅サーバの監視・通知基盤 — 既製品を使わずに自分で書いて運用",
+  "shift-manager — 塾での実運用と機能追加",
 ];
